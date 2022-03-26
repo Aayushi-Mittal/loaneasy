@@ -1,1 +1,1 @@
-web: gunicorn loaneasy.wsgi
+web: gunicorn loan_easy.wsgi
