@@ -1,0 +1,17 @@
+{% extends "./base.html" %}
+{% block title %}Applications{% endblock title %}
+{% block content %}
+<div class="px-10 py-5 m-5">
+    <div class="flex">
+        <h1 class="text-3xl text-gray-100 mr-10 mb-5">Hi {{request.user}}!</h1>
+        <a href="/logout/"><button class="p-2 w-200 text-red-500 rounded-lg">Log Out</button></a>
+    </div>
+    {% if request.user.username == "admin" or request.user == "admin" %}
+        {% block admin %}{% endblock %}
+    {% elif request.user.username == "lender" or request.user == "lender" %}
+        {% block lender %}{% endblock %}
+    {% else %}
+        {% block borrower %}{% endblock %}
+    {% endif %}
+</div>
+{% endblock content %}
