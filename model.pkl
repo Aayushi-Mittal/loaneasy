@@ -1,0 +1,109 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split, cross_val_score, GroupShuffleSplit
+
+# Classification models
+import xgboost as xgb
+
+from tqdm import tqdm_notebook
+
+import warnings
+warnings.simplefilter('ignore')
+from google.colab import files
+uploaded = files.upload()
+
+import pandas as pd
+import io
+
+train = pd.read_csv(io.StringIO(uploaded['ION Data Points - Sheet1.csv'].decode('utf-8')))
+train
+
+train.replace("Yes",1,inplace=True)
+train.replace("No",0,inplace=True)
+train.replace(["Maharashtra","Tamil Nadu","Uttar Pradesh","Gujarat","Karnataka","West Bengal","Rajasthan","Andhra Pradesh","Telangana","Madhya Pradesh","Kerala","Delhi"],10,inplace=True)
+train.replace(["Haryana","Bihar", "Punjab","Odisha","Assam","Chhattisgarh","Jharkhand","Uttarakhand","Jammu & Kashmir","Himachal Pradesh","Goa","Tripura","Chandigarh","Puducherry","Meghalaya","Sikkim","Manipur","Nagaland","Arunachal Pradesh","Mizoram","Andaman & Nicobar Islands"],5,inplace=True)
+train.replace("Primary",1,inplace=True)
+train.replace("Uneducated",-1,inplace=True)
+train.replace("Secondary",2,inplace=True)
+train.replace("Diploma",4,inplace=True)
+train.replace("Undegraduation",5,inplace=True)
+train.replace("Postgraduation",6,inplace=True)
+train.replace("Others",7,inplace=True)
+train.replace("Primary",1,inplace=True)
+train.replace("Senior Secondary",3,inplace=True)
+
+train.replace("Loan taken and still repaying",0,inplace=True)
+train.replace("Loan not taken / repayed",1,inplace=True)
+train.replace("Loan not repayed on time.",-3,inplace=True)
+
+train.replace("Business",5,inplace=True)
+train.replace("Education",4,inplace=True)
+train.replace("Medical",3,inplace=True)
+train.replace("Others",1,inplace=True)
+
+train.replace("Agriculture,forestry & fishing",2.56,inplace=True)
+train.replace("Mining & quarrying",0.28,inplace=True)
+train.replace("Manufacturing",5.28,inplace=True)
+train.replace("Electricity, gas, water supply & other utility services",8.01,inplace=True)
+train.replace("Construction",6.34,inplace=True)
+train.replace("Trade, hotels, transport, communication and services related to broadcasting",7.14,inplace=True)
+train.replace("Financial, real estate & prof servs",7.16,inplace=True)
+train.replace("Public Administration, defence and other services",7.39,inplace=True)
+
+
+train.replace("Auto Components",6.1,inplace=True)
+train.replace("Automotive",16.2,inplace=True)
+train.replace("Building Materials",3.4,inplace=True)
+train.replace("Capital Goods",-2.7,inplace=True)
+train.replace("Chemicals",4.9,inplace=True)
+train.replace("Construction",-0.6,inplace=True)
+train.replace("Consumers Durables",1.9,inplace=True)
+train.replace("Diversified",2.9,inplace=True)
+train.replace("FMGC-Non-food",5,inplace=True)
+train.replace("FMCG-Food",2.1,inplace=True)
+train.replace("Forest Materials",0.3,inplace=True)
+train.replace("Healthcare",11.5,inplace=True)
+train.replace("Industrial Products",0.8,inplace=True)
+train.replace("Information Technology",26,inplace=True)
+train.replace("Media & Entertainment",2.1,inplace=True)
+train.replace("Metals & Mining",-1.2,inplace=True)
+train.replace("Retail",1.5,inplace=True)
+train.replace("Telecom",3.2,inplace=True)
+train.replace("Textiles & Fashion",1.6,inplace=True)
+train.replace("Tourism & Hospitality",-0.4,inplace=True)
+train.replace("Transportation & Logistics",0.4,inplace=True)
+train.replace("Utilities",14.9,inplace=True)
+train.replace("None",0,inplace=True)
+
+
+train['District'] = train.District.map( lambda x: 1 if x == "Amaravati"or x == "Itanagar" or x == "Dispur" or x == "Patna" or x == "Raipur" or x == "Panaji" or x == "Gandhinagar" or x == "Chandigarh" or x == "Shimla" or x == "Ranchi" or x == "Hyderabad" or x == "Agartala" or x == "Lucknow" or x =="Dehradun" or x =="Kolkata" or x =="Aizawl" or x =="Kohima" or x =="Bhubaneswar" or x =="Chandigarh" or x =="Jaipur" or x=="Gangtok" or x =="Chennai" or x =="Hyderabad" or x == "Gandhinagar" or x =="Chandigarh" or x == "Shimla" or x =="Ranchi" or x =="Bengaluru" or x =="Thiruvananthapuram" or x =="Bhopal" or x =="Mumbai" else 0)
+
+train.dtypes
+
+train
+
+y_train=train['RISK SCORE']
+y_train_1=train['LOAN GRANTED  ']
+
+print(train.columns.tolist())
+
+x_train=train.drop(['LOAN GRANTED  ', 'RISK SCORE'], axis = 1)
+x_train.shape
+
+from sklearn.linear_model import LogisticRegression 
+classifier = LogisticRegression(random_state = 0) 
+classifier.fit(x_train, y_train_1) 
+
+from sklearn.linear_model import LinearRegression 
+rs = LinearRegression() 
+rs.fit(x_train, y_train) 
+
+import pickle
+pickle.dump(rs,open('model1.pk1','wb'))
+pickle.dump(classifier,open('model2.pk1','wb'))
