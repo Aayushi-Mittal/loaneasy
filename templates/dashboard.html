@@ -1,17 +1,174 @@
 {% extends "./base.html" %}
 {% block title %}Applications{% endblock title %}
 {% block content %}
-<div class="px-10 py-5 m-5">
+<div class="w-full px-10 py-5 m-5">
     <div class="flex">
         <h1 class="text-3xl text-gray-100 mr-10 mb-5">Hi {{request.user}}!</h1>
         <a href="/logout/"><button class="p-2 w-200 text-red-500 rounded-lg">Log Out</button></a>
     </div>
+
+
+
     {% if request.user.username == "admin" or request.user == "admin" %}
-        {% block admin %}{% endblock %}
+        
+    <div class="flex">
+        <h1 class="text-3xl text-gray-100 mr-10 mb-5">Loan Applications</h1>
+    </div>
+    <div class="flex flex-wrap">
+    {% for l in loan_application %}
+        <div class="shadow bg-gray-100 rounded-lg w-1/3 p-4 m-2">
+            <div class="flex justify-between flex-wrap items-center">
+                <a href="#"><h2 class="text-xl font-semibold hover:text-red-600"><i class="fi fi-rr-id-badge mr-2"></i>{{l.category}} ({{l.loan_amount}})</h2></a>
+                {% if l.accepted == 'accepted' %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                        approved
+                    </span>
+                {% elif l.accepted == "rejected" %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                        rejected
+                    </span>
+                {% else %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-amber-100 text-amber-800">
+                        in review
+                    </span>
+                {% endif %}
+            </div>
+            <ul class="text-sm text-gray-500 p-2">
+                <li><b>Loan Amount:</b> {{l.loan_amount}}</li>
+                <li><b>Interest Rate:</b> {{l.interest_rate}}</li>
+                <li><b>Duration:</b> {{l.duration}}</li>
+                <li><b>EMI amount:</b> {{l.emi_amount}}</li>
+                <li><b>Category:</b> {{l.category}}</li>
+                <li><b>Issued Date:</b> {{l.created_date}}</li>
+            </ul>
+            <div class="flex items-center">
+                <a href="/approve/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Update Status</button></a>
+                <a href="/view/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Loan Application</button></a>
+            </div>
+        </div>
+    {% empty %}
+        <div class="flex items-center justify-center">
+            <div class="text-xl">No Loan Applications yet.</div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+
+
     {% elif request.user.username == "lender" or request.user == "lender" %}
-        {% block lender %}{% endblock %}
+    <div class="flex">
+        <h1 class="text-3xl text-gray-100 mr-10 mb-5">Loan Applications</h1>
+    </div>
+    <div class="flex flex-wrap">
+    {% for l in loan_application %}
+        <div class="shadow bg-gray-100 rounded-lg w-1/3 p-4 m-2">
+            <div class="flex justify-between flex-wrap items-center">
+                <a href="#"><h2 class="text-xl font-semibold hover:text-red-600"><i class="fi fi-rr-id-badge mr-2"></i>{{l.category}} ({{l.loan_amount}})</h2></a>
+                {% if l.accepted == 'accepted' %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                        approved
+                    </span>
+                {% elif l.accepted == "rejected" %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                        rejected
+                    </span>
+                {% else %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-amber-100 text-amber-800">
+                        in review
+                    </span>
+                {% endif %}
+            </div>
+            <ul class="text-sm text-gray-500 p-2">
+                <li><b>Loan Amount:</b> {{l.loan_amount}}</li>
+                <li><b>Interest Rate:</b> {{l.interest_rate}}</li>
+                <li><b>Duration:</b> {{l.duration}}</li>
+                <li><b>EMI amount:</b> {{l.emi_amount}}</li>
+                <li><b>Category:</b> {{l.category}}</li>
+                <li><b>Issued Date:</b> {{l.created_date}}</li>
+            </ul>
+            <div class="flex items-center">
+                <a href="/status/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Update Status</button></a>
+                <a href="/accept/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Loan Application</button></a>
+            </div>
+        </div>
+    {% empty %}
+        <div class="flex items-center justify-center">
+            <div class="text-xl">No Loan Applications yet.</div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+
+
     {% else %}
-        {% block borrower %}{% endblock %}
+        
+    <div class="flex mt-1 mb-3">
+        <div class="w-1/3 shadow bg-gray-100 rounded-lg p-4 m-2">
+            <h2>Credit Score: {{request.user.credit_score}} </h2>
+            <div class="w-full bg-gray-200 h-4 m-1">
+                <div class="bg-rose-600 h-4" style="width: 20%"></div>
+            </div>
+        </div>
+        <div class="w-1/3 shadow bg-gray-100 rounded-lg p-4 m-2">
+            <h2>Credit Limit: {{request.user.credit_limit}} </h2>
+            <div class="w-full bg-gray-200 h-4 m-1">
+                <div class="bg-rose-600 h-4" style="width: {{request.user.credit_limit}}%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+        <h1 class="text-3xl text-gray-100 mr-10 mb-5">Loan Applications</h1>
+        <a href="/loan-application/"><button class="p-2 w-200 bg-red-500 text-gray-100 rounded-lg"><i class="fi fi-rr-add mr-2"></i>Apply for Loan</button></a>
+    </div>
+    <div class="flex flex-wrap">
+    {% for l in loan_application %}
+        <div class="shadow bg-gray-100 rounded-lg w-1/3 p-4 m-2">
+            <div class="flex justify-between items-center">
+                <a href="#"><h2 class="text-xl font-semibold hover:text-red-600"><i class="fi fi-rr-id-badge mr-2"></i>{{l.category}} ({{l.loan_amount}})</h2></a>
+                {% if l.accepted == 'accepted' %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                        approved
+                    </span>
+                {% elif l.accepted == "rejected" %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                        rejected
+                    </span>
+                {% else %}
+                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-amber-100 text-amber-800">
+                        in review
+                    </span>
+                {% endif %}
+            </div>
+            <ul class="text-sm text-gray-500 p-2">
+                <li><b>Loan Amount:</b> {{l.loan_amount}}</li>
+                <li><b>Interest Rate:</b> {{l.interest_rate}}</li>
+                <li><b>Duration:</b> {{l.duration}}</li>
+                <li><b>EMI amount:</b> {{l.emi_amount}}</li>
+                <li><b>Category:</b> {{l.category}}</li>
+                <li><b>Issued Date:</b> {{l.created_date}}</li>
+            </ul>
+            {% if l.status == 'accepted' %}
+                <div class="flex items-center">
+                    <a href="/status/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Track Status</button></a>
+                    <a href="/repay/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>Repay Loan</button></a>
+                </div>
+            {% else %}
+                <div class="flex items-center">
+                    <a href="/delete/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Delete Application</button></a>
+                </div>
+            {% endif %}
+        </div>
+    {% empty %}
+        <div class="flex items-center justify-center">
+            <div class="text-xl">No Loan Applications yet.</div>
+        </div>
+    {% endfor %}
+    </div>
+
     {% endif %}
+
+
 </div>
 {% endblock content %}

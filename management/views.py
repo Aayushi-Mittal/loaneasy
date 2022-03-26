@@ -47,32 +47,32 @@ class LoanApplicationsListView(ListView):
         return Loan_Application.objects.filter(deleted=False)
 
 
-class BorrowerLoanApplicationsListView(ListView):
-    queryset = Loan_Application.objects.filter(deleted=False)
-    template_name = "borrower_dashboard.html"
-    context_object_name = "loan_application"
-    paginate_by = 10
+# class BorrowerLoanApplicationsListView(ListView):
+#     queryset = Loan_Application.objects.filter(deleted=False)
+#     template_name = "borrower_dashboard.html"
+#     context_object_name = "loan_application"
+#     paginate_by = 10
 
-    def get_queryset(self):
-        return Loan_Application.objects.filter(deleted=False)
+#     def get_queryset(self):
+#         return Loan_Application.objects.filter(deleted=False)
 
-class LenderLoanApplicationsListView(ListView):
-    queryset = Loan_Application.objects.filter(deleted=False)
-    template_name = "lender_dashboard.html"
-    context_object_name = "notes"
-    paginate_by = 10
+# class LenderLoanApplicationsListView(ListView):
+#     queryset = Loan_Application.objects.filter(deleted=False)
+#     template_name = "lender_dashboard.html"
+#     context_object_name = "notes"
+#     paginate_by = 10
 
-    def get_queryset(self):
-        return Loan_Application.filter(accepted=('accepted'), deleted=False)
+#     def get_queryset(self):
+#         return Loan_Application.filter(accepted=('accepted'), deleted=False)
 
-class AdminLoanApplicationsListView(ListView):
-    queryset = Loan_Application.objects.filter(deleted=False)
-    template_name = "admin_dashboard.html"
-    context_object_name = "loan_application"
-    paginate_by = 10
+# class AdminLoanApplicationsListView(ListView):
+#     queryset = Loan_Application.objects.filter(deleted=False)
+#     template_name = "admin_dashboard.html"
+#     context_object_name = "loan_application"
+#     paginate_by = 10
 
-    def get_queryset(self):
-        return Loan_Application.objects.filter(deleted=False)
+#     def get_queryset(self):
+#         return Loan_Application.objects.filter(deleted=False)
 
 
 class LoanApplicationCreateView(CreateView):
