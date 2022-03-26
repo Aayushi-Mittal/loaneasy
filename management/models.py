@@ -103,4 +103,29 @@ class KYC(models.Model):
     id_proof = models.FileField(upload_to="kyc/id/%Y/%m/%d")
     bank_statement = models.FileField(upload_to="kyc/alt/%Y/%m/%d")
     
-    
+# class Notes(models.Model):
+#     GENDER_CHOICES = (
+#         ("male", "male"),
+#         ("female", "female"),
+#         ("other", "other"),
+#     )
+#     CATEGORY_CHOICES = (
+#         ("Education Loan", "education_loan"),
+#         ("Home Loan", "home_loan"),
+#         ("Business Loan", "business_loan"),
+#         ("Medical Loan", "medical_loan"),
+#         ("Other", "other"),
+#     )
+#     category = models.ForeignKey(Loan_Application, on_delete=models.CASCADE, blank=True, null=True)
+#     loan_amount = models.CharField(max_length=20)
+#     duration = models.ForeignKey(Loan_Application, on_delete=models.CASCADE, blank=True, null=True)
+#     interest_rate = models.ForeignKey(Loan_Application, on_delete=models.CASCADE, blank=True, null=True)
+#     emi_amount = models.CharField(max_length=20)
+#     accepted = models.BooleanField(default=False)
+#     deleted = models.ForeignKey(Loan_Application, on_delete=models.CASCADE)
+#     created_date = models.ForeignKey(Loan_Application, on_delete=models.CASCADE)
+#     accepted_date = models.DateTimeField(auto_now=True)
+#     last_repayment_date = models.DateTimeField(auto_now=True)
+#     emi_number = models.CharField(max_length=20)
+#     is_completed = models.BooleanField(default=False)
+

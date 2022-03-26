@@ -1,0 +1,26 @@
+{% extends "./base.html" %}
+{% block title %}Loan Application Details{% endblock title %}
+{% block content %}
+<div class="flex flex-col flex-wrap px-10 py-5 m-5 h-screen items-center justify-center">
+    <h1 class="text-3xl text-gray-100 mr-10 mb-5">Loan Application</h1>
+    <div class="flex flex-wrap">
+            <div class="shadow bg-gray-100 rounded-lg p-4 m-2">
+                <h2 class="text-xl font-semibold hover:text-red-600"><i class="fi fi-rr-apps mr-2"></i>{{object.category}}</h2>
+                <ul class="text-md text-gray-500 p-2">
+                    <li><b>Name:</b> {{object.full_name}}</li>
+                    <li><b>Age:</b> {{object.age}}</li>
+                    <li><b>Gender:</b> {{object.gender}}</li>
+                    <li><b>Address:</b> {{object.address}}</li>
+                    <li><b>Occupation:</b> {{object.occupation}}</li>
+                    <li><b>Organization:</b> {{object.organization}}</li>
+                    <li><b>Loan Amount:</b> {{object.loan_amount}}</li>
+                    <li><b>Interest Rate:</b> {{object.interest_rate}}</li>
+                    <li><b>Duration:</b> {{object.duration}}</li>
+                    <li><b>EMI amount:</b> {{object.emi_amount}}</li>
+                    <li><b>Category:</b> {{object.category}}</li>
+                    <li><b>Issued Date:</b> {{object.created_date}}</li>
+                </ul>
+            </div>
+    </div>
+</div>
+{% endblock content %}

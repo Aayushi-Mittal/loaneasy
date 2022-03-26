@@ -25,8 +25,6 @@ SECRET_KEY = 'django-insecure-@u$h&uhnw^sj8+e2xpb^yv57$0!%%eh(r=%&l7mnmc5a*-yyi1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -75,10 +73,23 @@ WSGI_APPLICATION = 'loan_easy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": "django.db.backends.postgresql_psycopg2", 
+        'NAME': "dd8a3u8o3buclp",
+        'USER': "aabtsxmnebcraf",
+        'PASSWORD': "38514f95a91db749a7e9e0ebaccade0fa70ad5781ae56e904a51f45cc518811f",
+        'HOST': "ec2-54-160-109-68.compute-1.amazonaws.com", 
+        'PORT': 5432,
     }
 }
 
@@ -131,3 +142,8 @@ CRISPY_TEMPLATE_PACK = 'uni_form'
 LOGIN_REDIRECT_URL="/dashboard"
 LOGIN_URL="/login/"
 LOGOUT_REDIRECT_URL="/login"
+
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles/"
+
+ALLOWED_HOSTS = ["*"]

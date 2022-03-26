@@ -1,7 +1,8 @@
 from urllib import request
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -99,3 +100,27 @@ class ProofsCreateView(CreateView):
     template_name = "loan_application_2.html"
     success_url = "/dashboard/"
     # upload_file(request)
+
+
+class LoanApplicationDeleteView(DeleteView):
+    model = Loan_Application
+    template_name = "delete.html"
+    success_url = "/dashboard/"
+
+
+class LoanApplicationDetailView(DetailView):
+    model = Loan_Application
+    template_name = "loan_application_details.html"
+
+
+class LoanApplicationStatusUpdateView(UpdateView):
+    model = Loan_Application
+    form_class = StatusUpdateForm
+    template_name = "update_status.html"
+    success_url = "/dashboard/"
+
+    def form_valid(self, form):
+        self.object = form.save()
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())

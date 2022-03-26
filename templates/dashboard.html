@@ -42,8 +42,8 @@
                 <li><b>Issued Date:</b> {{l.created_date}}</li>
             </ul>
             <div class="flex items-center">
-                <a href="/approve/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Update Status</button></a>
-                <a href="/view/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Loan Application</button></a>
+                <a href="/approve/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Update Status</button></a>
+                <a href="/view/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Loan Application</button></a>
             </div>
         </div>
     {% empty %}
@@ -88,8 +88,9 @@
                 <li><b>Issued Date:</b> {{l.created_date}}</li>
             </ul>
             <div class="flex items-center">
-                <a href="/status/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Update Status</button></a>
-                <a href="/accept/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Loan Application</button></a>
+                <a href="/history/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>View Payment History</button></a>
+                <a href="/view/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Details</button></a>
+                <a href="/accept/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>Accept Loan Request</button></a>
             </div>
         </div>
     {% empty %}
@@ -149,14 +150,14 @@
                 <li><b>Category:</b> {{l.category}}</li>
                 <li><b>Issued Date:</b> {{l.created_date}}</li>
             </ul>
-            {% if l.status == 'accepted' %}
+            {% if l.accepted == 'accepted' %}
                 <div class="flex items-center">
-                    <a href="/status/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Track Status</button></a>
-                    <a href="/repay/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>Repay Loan</button></a>
+                    <a href="/history/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Track Status</button></a>
+                    <a href="/repay/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>Repay Loan</button></a>
                 </div>
             {% else %}
                 <div class="flex items-center">
-                    <a href="/delete/<pk>"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Delete Application</button></a>
+                    <a href="/delete/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>Delete Application</button></a>
                 </div>
             {% endif %}
         </div>
