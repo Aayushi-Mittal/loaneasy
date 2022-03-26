@@ -32,10 +32,12 @@ def predict():
     profit = request.form.get('Profit per anum')
     credit_score = request.form.get('Credit Score')
     
-    input_query = np.array([[sector, age, tv_bills, water_bills, e_bills, family, isGroup, duration, salary, qual, district, state, loan_history, loan_category, busi_sector, founding_year, profit, credit_score]])
+    # input_query = np.array([[sector, age, tv_bills, water_bills, e_bills, family, isGroup, duration, salary, qual, district, state, loan_history, loan_category, busi_sector, founding_year, profit, credit_score]])
 
+    input_query=np.array([[7.16,45,1,0,0,5,0,5.0,900000,5,0,10,-3,5,0.8,2020,400,1]])
+    
     result1 = model1.predict(input_query)[0]
-    result2 = model2.predict(input_query)[0]
+    result2 = model2.predict(input_query)[1]
 
     return jsonify({'loan-granted':str(result1), 'risk-score':str(result2)})
 
