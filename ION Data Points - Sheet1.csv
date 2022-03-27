@@ -1,0 +1,50 @@
+Sector,Age,Tv Bills ,Water bills,Electricity Bills,Family Members ,Group?,Duration (year),Salary (yearly),Qualifications,District,State,Loan History ,Loan Category,Sector of Business,Founding Year,Profit per anum,Credit Score ,LOAN GRANTED  ,RISK SCORE
+"Agriculture,forestry & fishing",23,Yes,Yes,Yes,6,Yes,2,500000,Secondary,Amritsar,Punjab,Loan taken and still repaying,Business,Retail,2013,40000,20,Yes,30
+Mining & quarrying,30,Yes,Yes,Yes,5,No,1,200000,Diploma,Rohtak,Haryana,Loan taken and still repaying,Medical,None,0,0,40,Yes,30
+Manufacturing,35,Yes,Yes,Yes,6,No,3,1000000,Undegraduation,Agra,Uttar Pradesh,Loan not taken / repayed,Business,Building Materials,2020,100,10,No,85
+"Electricity, gas, water supply & other utility services",27,Yes,Yes,Yes,4,No,1,600000,Undegraduation,Alwar,Rajasthan,Loan not taken / repayed,Education,None,0,0,20,Yes,30
+"Public Administration, defence and other services",36,Yes,Yes,Yes,3,No,1,800000,Postgraduation,Faridabad,Haryana,Loan not repayed on time.,Business,Information Technology,2020,300000,60,Yes,20
+"Public Administration, defence and other services",40,Yes,Yes,No,4,No,2,700000,Others,Patna,Bihar,Loan taken and still repaying,Medical,None,0,0,10,Yes,40
+"Financial, real estate & prof servs",32,Yes,Yes,Yes,4,Yes,1,600000,Undegraduation,Nainital,Himachal Pradesh,Loan taken and still repaying,Business,Capital Goods,2017,150000,80,Yes,35
+"Public Administration, defence and other services",50,Yes,Yes,Yes,8,No,2.5,800000,Undegraduation,Kolkata,West Bengal,Loan not taken / repayed,Education,None,0,0,20,Yes,45
+"Public Administration, defence and other services",42,Yes,Yes,Yes,5,No,1,1200000,Undegraduation,Kolkata,West Bengal,Loan not taken / repayed,Business,Textiles & Fashion,2020,20000,30,Yes,50
+"Agriculture,forestry & fishing",23,Yes,Yes,No,4,No,1.5,300000,Senior Secondary,Gurugram,Haryana,Loan not repayed on time.,Business,Chemicals,2019,250000,70,Yes,20
+"Agriculture,forestry & fishing",28,Yes,No,Yes,4,No,1,600000,Senior Secondary,Gurugram,Haryana,Loan not taken / repayed,Business,Healthcare,2020,300000,60,Yes,20
+"Agriculture,forestry & fishing",29,No,Yes,Yes,4,Yes,0.5,800000,Diploma,Ludhiana,Punjab,Loan taken and still repaying,Business,Industrial Products,2018,100000,40,Yes,30
+"Agriculture,forestry & fishing",35,Yes,Yes,Yes,5,Yes,1.5,500000,Diploma,Howrah,West Bengal,Loan not taken / repayed,Business,Media & Entertainment,2016,150000,50,Yes,20
+Construction,28,No,Yes,No,3,Yes,1,200000,Primary,Patna,Bihar,Loan taken and still repaying,Medical,None,0,0,30,Yes,40
+"Trade, hotels, transport, communication and services related to broadcasting",43,Yes,Yes,Yes,5,No,2,1500000,Postgraduation,Mumbai,Maharashtra,Loan not taken / repayed,Business,Transportation & Logistics,2014,50000,60,Yes,40
+Construction,26,Yes,Yes,Yes,3,No,1,400000,Uneducated,Deogarh,Odisha,Loan taken and still repaying,Education,None,0,0,90,Yes,45
+Construction,23,Yes,Yes,Yes,4,No,1,600000,Secondary,New Delhi,Delhi,Loan taken and still repaying,Medical,None,0,0,70,Yes,40
+Construction,25,Yes,Yes,Yes,4,Yes,1,300000,Primary,Ranchi,Jharkhand,Loan taken and still repaying,Education,None,0,0,30,Yes,45
+"Electricity, gas, water supply & other utility services",36,Yes,Yes,Yes,5,Yes,1,500000,Postgraduation,Mumbai,Maharashtra,Loan not taken / repayed,Business,None,0,0,10,Yes,50
+"Public Administration, defence and other services",57,Yes,Yes,Yes,6,No,2,800000,Undegraduation,Jodhpur,Rajasthan,Loan taken and still repaying,Medical,None,0,0,20,Yes,45
+"Public Administration, defence and other services",67,No,Yes,Yes,6,No,2,1000000,Undegraduation,Jaipur,Rajasthan,Loan not taken / repayed,Medical,None,0,0,40,Yes,50
+"Public Administration, defence and other services",62,Yes,Yes,Yes,5,No,3,800000,Senior Secondary,Dehradun,Uttarakhand,Loan not taken / repayed,Education,None,0,0,20,Yes,50
+"Public Administration, defence and other services",28,Yes,Yes,Yes,4,Yes,1,900000,Postgraduation,Coimbatore,Tamil Nadu,Loan taken and still repaying,Business,Metals & Mining,2007,200000,10,Yes,30
+"Public Administration, defence and other services",56,Yes,Yes,Yes,5,No,2.5,1600000,Undegraduation,Chennai,Tamil Nadu,Loan not taken / repayed,Business,Consumers Durables,2011,40000,40,Yes,50
+"Electricity, gas, water supply & other utility services",26,Yes,Yes,Yes,4,No,1,500000,Undegraduation,Coimbatore,Tamil Nadu,Loan not taken / repayed,Medical,None,0,0,50,Yes,50
+"Financial, real estate & prof servs",37,Yes,Yes,Yes,5,No,1,600000,Diploma,Bhopal,Madhya Pradesh,Loan not taken / repayed,Business,Textiles & Fashion,2018,40000,20,Yes,45
+"Financial, real estate & prof servs",46,Yes,Yes,Yes,7,No,2,500000,Primary,Nagpur,Maharashtra,Loan not taken / repayed,Business,Tourism & Hospitality,2016,500000,20,Yes,20
+Manufacturing,40,Yes,Yes,No,6,No,4,1500000,Secondary,Palakkad,Kerala,Loan taken and still repaying,Business,Chemicals,2017,100000,20,Yes,20
+Mining & quarrying,27,Yes,Yes,Yes,5,No,2,200000,Undegraduation,Kutch,Gujarat,Loan not repayed on time.,Business,Textiles & Fashion,2018,90000,40,Yes,35
+Manufacturing,38,Yes,Yes,Yes,4,No,3,1400000,Postgraduation,New Delhi,Delhi,Loan not taken / repayed,Business,Healthcare,2017,200000,30,Yes,20
+Construction,24,Yes,Yes,No,4,No,1,200000,Postgraduation,Hyderabad,Karnataka,Loan not taken / repayed,Education,None,0,0,70,Yes,30
+Manufacturing,45,Yes,Yes,Yes,6,No,3,900000,Primary,Ahembdabad,Gujarat,Loan taken and still repaying,Business,FMCG-Food,2021,20000,90,Yes,30
+Manufacturing,36,Yes,Yes,Yes,7,No,2,1800000,Postgraduation,Banglore,Karnataka,Loan not taken / repayed,Medical,None,0,0,60,Yes,25
+Manufacturing,54,Yes,Yes,Yes,6,No,3,1500000,Undegraduation,Mumbai,Maharashtra,Loan not taken / repayed,Business,Capital Goods,2009,200000,40,Yes,20
+Manufacturing,34,Yes,Yes,Yes,4,No,2.5,1600000,Senior Secondary,Jodhpur,Rajasthan,Loan not taken / repayed,Business,Information Technology,2017,600000,50,Yes,10
+"Electricity, gas, water supply & other utility services",26,Yes,Yes,Yes,4,No,2,600000,Senior Secondary,Luknow,Uttar Pradesh,Loan not taken / repayed,Education,None,0,0,20,Yes,60
+"Public Administration, defence and other services",45,No,Yes,Yes,8,No,4,900000,Senior Secondary,Bhubhneshwar,Odisha,Loan not taken / repayed,Medical,None,0,0,40,Yes,50
+"Financial, real estate & prof servs",45,Yes,No,No,5,No,5,900000,Undegraduation,New Delhi,Delhi,Loan not repayed on time.,Business,Industrial Products,2020,40000,30,Yes,40
+"Financial, real estate & prof servs",32,Yes,Yes,Yes,4,No,2,500000,Senior Secondary,Raipur,Chhattisgarh,Loan taken and still repaying,Medical,None,0,0,10,Yes,60
+"Financial, real estate & prof servs",34,Yes,Yes,Yes,3,Yes,3,700000,Undegraduation,Mumbai,Maharashtra,Loan taken and still repaying,Business,Telecom,2016,60000,60,Yes,30
+"Electricity, gas, water supply & other utility services",25,Yes,Yes,Yes,4,No,1.5,400000,Primary,Aizwal,Manipur,Loan not taken / repayed,Business,Transportation & Logistics,2017,100000,0,No,75
+"Public Administration, defence and other services",36,Yes,Yes,Yes,6,No,2,500000,Diploma,Aizwal,Manipur,Loan taken and still repaying,Education,None,0,0,0,No,80
+"Agriculture,forestry & fishing",36,Yes,Yes,Yes,5,No,1,200000,Uneducated,Bhopal,Madhya Pradesh,Loan not taken / repayed,Business,Media & Entertainment,2019,500000,20,Yes,20
+"Agriculture,forestry & fishing",26,Yes,Yes,Yes,4,Yes,3,100000,Uneducated,Kohima,Nagaland,Loan taken and still repaying,Others,None,0,0,30,Yes,45
+"Agriculture,forestry & fishing",35,No,No,No,4,Yes,2,300000,Secondary,Jalandar,Punjab,Loan not taken / repayed,Education,None,0,0,20,Yes,50
+"Agriculture,forestry & fishing",25,No,Yes,Yes,3,No,2,1200000,Undegraduation,Ambala,Haryana,Loan not taken / repayed,Others,None,0,0,40,Yes,40
+Construction,23,Yes,Yes,Yes,5,Yes,1,400000,Senior Secondary,Rachi,Jharkhand,Loan not taken / repayed,Business,Building Materials,2016,40000,50,Yes,25
+"Trade, hotels, transport, communication and services related to broadcasting",34,Yes,Yes,Yes,4,No,5,600000,Undegraduation,Indore,Madhya Pradesh,Loan not taken / repayed,Business,Capital Goods,2020,30000,50,Yes,35
+"Financial, real estate & prof servs",56,Yes,Yes,Yes,6,No,2,300000,Others,Bhopal,Madhya Pradesh,Loan not taken / repayed,Business,Retail,2019,120000,80,Yes,10
