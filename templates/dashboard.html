@@ -61,21 +61,17 @@
         <h1 class="text-3xl text-gray-100 mr-10 mb-5">Loan Applications</h1>
     </div>
     <div class="flex flex-wrap">
-    {% for l in loan_application %}
+    {% for l in loan_notes %}
         <div class="shadow bg-gray-100 rounded-lg w-1/3 p-4 m-2">
             <div class="flex justify-between flex-wrap items-center">
                 <a href="#"><h2 class="text-xl font-semibold hover:text-red-600"><i class="fi fi-rr-id-badge mr-2"></i>{{l.category}} ({{l.loan_amount}})</h2></a>
-                {% if l.accepted == 'accepted' %}
+                {% if l.accepted == True %}
                     <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        approved
-                    </span>
-                {% elif l.accepted == "rejected" %}
-                    <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                        rejected
+                        loan request accepted
                     </span>
                 {% else %}
                     <span class="px-2 text-xs leading-5 font-semibold rounded-full bg-amber-100 text-amber-800">
-                        in review
+                        pending
                     </span>
                 {% endif %}
             </div>
@@ -88,9 +84,12 @@
                 <li><b>Issued Date:</b> {{l.created_date}}</li>
             </ul>
             <div class="flex items-center">
-                <a href="/history/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>View Payment History</button></a>
-                <a href="/view/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Details</button></a>
-                <a href="/accept/{{l.id}}"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>Accept Loan Request</button></a>
+                {% if l.accepted == True %}
+                <a href="#"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-add mr-2"></i>View Payment History</button></a>
+                {% else %}
+                <a href="#"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>Accept Loan Request</button></a>
+                {% endif %}
+                <a href="#"><button class="mt-2 mr-2 p-2 bg-red-500 text-gray-100 rounded-lg" type="submit"><i class="fi fi-rr-eye mr-2"></i>View Details</button></a>
             </div>
         </div>
     {% empty %}

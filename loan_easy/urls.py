@@ -12,6 +12,7 @@ urlpatterns = [
     path('approve/<pk>/', LoanApplicationStatusUpdateView.as_view()),
     path('delete/<pk>/', LoanApplicationDeleteView.as_view()),
     path('view/<pk>/', LoanApplicationDetailView.as_view()),
+    path('lender/dashboard/', LenderLoanApplicationsListView.as_view()),
     # path('dashboard/', BorrowerLoanApplicationsListView.as_view()),
     # path('admin/dashboard/', AdminLoanApplicationsListView.as_view()),
     # path('lender/dashboard/', LenderLoanApplicationsListView.as_view()),

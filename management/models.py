@@ -103,6 +103,36 @@ class KYC(models.Model):
     id_proof = models.FileField(upload_to="kyc/id/%Y/%m/%d")
     bank_statement = models.FileField(upload_to="kyc/alt/%Y/%m/%d")
     
+class Notes(models.Model):
+    GENDER_CHOICES = (
+        ("male", "male"),
+        ("female", "female"),
+        ("other", "other"),
+    )
+    CATEGORY_CHOICES = (
+        ("Education Loan", "education_loan"),
+        ("Home Loan", "home_loan"),
+        ("Business Loan", "business_loan"),
+        ("Medical Loan", "medical_loan"),
+        ("Other", "other"),
+    )
+    category = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
+    loan_amount = models.CharField(max_length=20)
+    duration = models.CharField(max_length=20)
+    interest_rate = models.CharField(max_length=5)
+    emi_amount = models.CharField(max_length=20)
+    accepted = models.BooleanField(default=False)
+    deleted = models.BooleanField(default=False)
+    created_date = models.DateTimeField(auto_now=True)
+    accepted_date = models.DateTimeField(auto_now=True)
+    last_repayment_date = models.DateTimeField(auto_now=True)
+    emi_number = models.CharField(max_length=20)
+    is_completed = models.BooleanField(default=False)
+
+
+
+
+    
 # class Notes(models.Model):
 #     GENDER_CHOICES = (
 #         ("male", "male"),

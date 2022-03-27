@@ -6,6 +6,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 
 from management.forms import *
 from management.models import *
@@ -34,18 +35,17 @@ class LoanApplicationsListView(ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        # accepted = Loan_Application.objects.filter(accepted='accepted', deleted=False)
-        # in_review = Loan_Application.objects.filter(accepted='in_review', deleted=False)
-        # rejected = Loan_Application.objects.filter(accepted='rejected', deleted=False)
-        # output=[]
-        # if accepted!=[]:
-        #     output.append(accepted)
-        # if in_review!=[]:
-        #     output.append(in_review)
-        # if rejected!=[]:
-        #     output.append(rejected)
-        # return output
         return Loan_Application.objects.filter(deleted=False)
+    
+
+class LenderLoanApplicationsListView(ListView):
+    queryset = Notes.objects.filter(deleted=False)
+    template_name = "dashboard.html"
+    context_object_name = "loan_notes"
+    paginate_by = 10
+
+    def get_queryset(self):
+        return Notes.objects.filter(deleted=False)
 
 
 # class BorrowerLoanApplicationsListView(ListView):
